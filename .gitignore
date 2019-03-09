@@ -107,5 +107,5 @@ ENV/
 .idea/workspace.xml
 .idea/Yearning.iml
 .DS_Store
-.vscode
 .idea
+.vscode
