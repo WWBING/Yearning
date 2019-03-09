@@ -1,0 +1,44 @@
+version: '2'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: mysql
+    volumes:
+      - ./docker/etc/mysql/:/etc/mysql/conf.d/
+      - ./db_data/:/var/lib/mysql/
+      - ./init-sql/:/docker-entrypoint-initdb.d/
+    restart: always
+    ports:
+      - "5336:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "Cy1NaFG7JnIQgdkt"
+      MYSQL_DATABASE: Yearning
+      MYSQL_USER: yearning
+      MYSQL_PASSWORD: "Cg2wMiLZYeB8jqX9"
+
+  inception:
+    image: wwwbbb/inception:v1.0
+    container_name: inception
+    restart: always
+    ports:
+      - "20009:6669"
+    volumes:
+      - "./inception/inc.cnf:/etc/inc.cnf"
+
+
+  yearningg:
+    image: wwwbbb/yearning:v1.0
+    container_name: yearning
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "8080:8000"
+    environment:
+      HOST: localhost
+      MYSQL_PASSWORD: "Cy1NaFG7JnIQgdkt"
+      MYSQL_USER: root
+      MYSQL_ADDR: mysql
+
+# 默认账号：admin，默认密码：Yearning_admin

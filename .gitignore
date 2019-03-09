@@ -106,3 +106,4 @@ ENV/
 .idea/vcs.xml
 .idea/workspace.xml
 .idea/Yearning.iml
+.DS_Store

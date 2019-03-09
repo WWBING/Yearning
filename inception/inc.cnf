@@ -1,0 +1,35 @@
+[inception]
+general_log=1
+general_log_file=inception.log
+port=6669
+
+socket=/tmp/inc.socket
+character-set-client-handshake=0
+character-set-server=utf8
+
+inception_support_charset=utf8mb4,utf8
+inception_enable_nullable=1
+inception_enable_select_star=0
+inception_enable_orderby_rand=0
+inception_enable_not_innodb=1
+inception_enable_blob_type=1
+inception_enable_identifer_keyword=1
+
+inception_check_primary_key=1
+inception_check_autoincrement_datatype=0
+inception_check_table_comment=0
+inception_check_column_comment=0
+inception_check_index_prefix=0
+inception_check_column_default_value=0
+inception_check_identifier=0
+inception_check_autoincrement_init_value=0
+
+inception_max_char_length=500
+inception_osc_min_table_size=1
+inception_osc_bin_dir=/usr/bin
+inception_osc_chunk_time=0.1
+
+inception_remote_backup_host = 192.168.0.168
+inception_remote_backup_port =  5336
+inception_remote_system_user = root
+inception_remote_system_password = "Cy1NaFG7JnIQgdkt"
