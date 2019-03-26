@@ -36,7 +36,3 @@ yum install docker-ce -y
 systemctl start docker && systemctl enable docker
 # 验证Docker安装
 docker version
-
-
-#----------------- 安装 Yearning 审计系统 --------------------
-docker-compose up -d
